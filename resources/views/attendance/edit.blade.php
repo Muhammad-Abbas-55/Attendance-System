@@ -9,7 +9,7 @@
                 @csrf
                 @method('put')
                 @include('layout.success-message')
-                <hr><h3 class="text-center text-dark">Edit Student Attendance</h3><hr>
+                <hr><h3 class="text-center text-dark">Edit Student   Attendance</h3><hr>
                 <h3 class="text-center text-dark">Student : {{ $attendance->user->name }}</h3>
                 <div class="form-group">
                     <label for="date" class="text-dark">Date:</label><br>
