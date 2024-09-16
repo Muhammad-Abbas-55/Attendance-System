@@ -8,8 +8,6 @@
         </div>
         <div class="col-6">
             @include('layout.success-message')
-            <div class="mt-3">
-            </div>
         </div>
         <div class="col-3">
             @include('layout.search-bar')

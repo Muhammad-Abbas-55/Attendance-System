@@ -52,6 +52,8 @@ Route::get('/attendances_index',[AttendanceController::class, 'index'])->name('a
 
 Route::get('/attendances_create',[AttendanceController::class, 'create'])->name('attendances.create');
 
+Route::post('/attendances', [AttendanceController::class, 'store'])->name('attendances.store');
+
 Route::get('/attendances/{id}',[AttendanceController::class, 'show'])->name('attendances.show');
 
 Route::get('/attendances/{id}/edit',[AttendanceController::class, 'edit'])->name('attendances.edit');
@@ -64,7 +66,18 @@ Route::get('/leaves_create',[AttendanceController::class, 'leave_create'])->name
 
 Route::post('/leaves',[AttendanceController::class, 'leave_store'])->name('leaves.store');
 
-Route::post('/attendances', [AttendanceController::class, 'store'])->name('attendances.store');
+
+Route::get('/attendances_student',[AttendanceController::class, 'attendance_student'])->name('attendances.student');
+
+Route::post('/attendances_add', [AttendanceController::class, 'attendance_add'])->name('attendances.add');
+
+
+Route::get('/attendances-report', [AttendanceController::class, 'report'])->name('attendances.report');
+Route::get('/reports-index', [AttendanceController::class, 'report_index'])->name('report.index');
+Route::get('/generate-grade', [AttendanceController::class, 'generateGrade'])->name('generate.grade');
+
+
+
 
 
 /*

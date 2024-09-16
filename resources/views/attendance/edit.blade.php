@@ -26,15 +26,17 @@
                     <select class="custom-select text-center" style="width: 300px" id="status" name="status">
                         <option disabled {{ $attendance->status == null ? 'selected' : '' }}>Select</option>
                         <option value="Present" {{ $attendance->status == 'Present' ? 'selected' : '' }}>Present</option>
+                        <option value="Absent" {{ $attendance->status == 'Absent' ? 'selected' : '' }}>Absent</option>
                         <option value="Leave Request" {{ $attendance->status == 'Leave Request' ? 'selected' : '' }}>
                             Leave Request</option>
-                        <option value="Approved" {{ $attendance->status == 'Approved' ? 'selected' : '' }}>Approved</option>
+                        <option value="Leave" {{ $attendance->status == 'Leave' ? 'selected' : '' }}>Leave Approved</option>
+
                     </select>
                 </div>
                 @error('status')
                     <span class="fs-6 text-danger mt-2 d-block justify-content-center">{{ $message }}</span>
                 @enderror
-                <div class="form-group">
+                <div class="form-group d-flex justify-content-center">
                     <label for="remember-me" class="text-dark"></label><br>
                     <input type="submit" name="submit" class="btn btn-dark btn-md" value="Update">
                 </div>

@@ -11,6 +11,7 @@ class DashboardController extends Controller
 
     public function index()
     {
+
         if (Auth::check()) {
             $users = User::orderBy('created_at', 'DESC');
         
@@ -18,6 +19,7 @@ class DashboardController extends Controller
                 return view('student_dashboard', compact('users'));
             } 
             elseif (Auth::user()->user_type === '1') {
+
                 return view('admin_dashboard', compact('users'));
             } 
         } else {

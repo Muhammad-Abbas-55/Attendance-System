@@ -15,6 +15,7 @@
                     <select class="custom-select text-center" style="width: 300px" id="status" name="status">
                         <option disabled selected>Select</option>
                         <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
                     </select>
                 </div>
                 @error('status')

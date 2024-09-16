@@ -3,7 +3,7 @@
     @if (Auth::user()->user_type === '0')
         <div class="col-12 d-flex justify-content-center">
             <div class="row">
-                <h1 class="text-center">View your Attendance</h1>
+                <hr><h1 class="text-center">View your Attendance</h1>
                 <hr>
             </div>
         </div>
@@ -40,11 +40,14 @@
     @if (Auth::user()->user_type === '1')
         <div class="col-12 d-flex justify-content-center">
             <div class="row">
-                <h1 class="text-center">View Student Attendances</h1>
+                <hr><h1 class="text-center">View Student Attendances</h1>
                 <hr>
             </div>
         </div>
         <h4 class="text-center">Admin : {{ Auth::user()->name }}</h4>
+        <a href="{{ route('attendances.student') }}" class="btn btn-primary btn-sm">
+            <i>Add Attendace</i>
+        </a>
         <hr>
         <div class="table-responsive text-center">
             <table class="table col-md-3 mx-auto">
@@ -81,5 +84,6 @@
                 </tbody>
             </table>
         </div>
+        {{ $attendances->links() }}
     @endif
 @endsection
