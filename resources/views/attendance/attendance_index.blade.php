@@ -3,7 +3,8 @@
     @if (Auth::user()->user_type === '0')
         <div class="col-12 d-flex justify-content-center">
             <div class="row">
-                <hr><h1 class="text-center">View your Attendance</h1>
+                <hr>
+                <h1 class="text-center">View your Attendance</h1>
                 <hr>
             </div>
         </div>
@@ -40,7 +41,8 @@
     @if (Auth::user()->user_type === '1')
         <div class="col-12 d-flex justify-content-center">
             <div class="row">
-                <hr><h1 class="text-center">View Student Attendances</h1>
+                <hr>
+                <h1 class="text-center">View Student Attendances</h1>
                 <hr>
             </div>
         </div>
@@ -75,7 +77,8 @@
                                 <a href="{{ route('attendances.edit', $attendance->id) }}" class="btn btn-success btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="{{ route('attendances.destroy', $attendance->id) }}" class="btn btn-danger btn-sm">
+                                <a href="{{ route('attendances.destroy', $attendance->id) }}"
+                                    class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

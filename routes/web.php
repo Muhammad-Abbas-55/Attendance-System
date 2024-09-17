@@ -26,6 +26,7 @@ Route::get('', [DashboardController::class, 'index'])->name('dashboard');
 |--------------------------------------------------------------------------
 */
 
+
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 Route::post('/register', [AuthController::class, 'store']);
@@ -36,6 +37,10 @@ Route::post('/login', [AuthController::class, 'authenticate']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+
+
+
+Route::middleware('auth')->group(function () {
 
 Route::get('profiles/{profile}/edit', [AuthController::class, 'edit'])->name('profiles.edit');
 
@@ -50,7 +55,7 @@ Route::put('profiles/{profile}', [AuthController::class, 'update'])->name('profi
 
 Route::get('/attendances_index',[AttendanceController::class, 'index'])->name('attendances.index');
 
-Route::get('/attendances_create',[AttendanceController::class, 'create'])->name('attendances.create');
+Route::get('/attendances_create',[AttendanceController::class, 'create'])->name('attendances.create')->middleware('auth');
 
 Route::post('/attendances', [AttendanceController::class, 'store'])->name('attendances.store');
 
@@ -89,6 +94,5 @@ Route::get('/generate-grade', [AttendanceController::class, 'generateGrade'])->n
 Route::get('/students',[StudentController::class, 'index'])->name('students.view');
 
 
-
-
+});
 
